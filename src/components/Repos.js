@@ -5,15 +5,16 @@ import { ListGroup, ListGroupItem } from "reactstrap";
 const Repos = ({ repos_url }) => {
   const [repos, setRepos] = useState([]);
 
-  const fetchRepos = async () => {
-    const { data } = await Axios.get(repos_url);
-    setRepos(data)
-    console.log(repos)
-  };
-
+ 
   useEffect(() => {
+     const fetchRepos = async () => {
+       const { data } = await Axios.get(repos_url);
+       setRepos(data);
+       console.log(repos);
+     };
+
     fetchRepos();
-  }, [repos_url]);
+  }, [repos,repos_url]);
 
   return (
     <ListGroup>
