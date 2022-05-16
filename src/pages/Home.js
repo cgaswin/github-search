@@ -22,7 +22,6 @@ const Home = () => {
         try{
             const {data} = await Axios.get(`https://api.github.com/users/${query}`)
             setUser(data);
-            console.log(data)
 
         }
         catch(error){

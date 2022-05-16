@@ -6,15 +6,14 @@ const Repos = ({ repos_url }) => {
   const [repos, setRepos] = useState([]);
 
  
+  
   useEffect(() => {
-     const fetchRepos = async () => {
-       const { data } = await Axios.get(repos_url);
-       setRepos(data);
-       console.log(repos);
-     };
-
-    fetchRepos();
-  }, [repos,repos_url]);
+    const fetchRepos = async () => {
+      const { data } = await Axios.get(repos_url);
+      setRepos(data);
+    };
+    fetchRepos()
+  }, [repos_url]);
 
   return (
     <ListGroup>
